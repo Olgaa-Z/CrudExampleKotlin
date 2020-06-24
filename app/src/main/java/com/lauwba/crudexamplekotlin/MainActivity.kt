@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
             @SuppressLint("WrongThread")
             override fun doInBackground(vararg v: Void): String {
-                val params = HashMap<String, String>()
+                val params = HashMap<String, String?>()
                 params[Config.KEY_EMP_NAMA] = name
                 params[Config.KEY_EMP_POSISI] = desg
                 params[Config.KEY_EMP_GAJIH] = sal
@@ -93,8 +93,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             addEmployee()
         }
 
-//        if (v === buttonView) {
-//            startActivity(Intent(this, TampilSemuaPgw::class.java))
-//        }
+        if (v === buttonView) {
+            startActivity(Intent(this, TampilSemuaPgw::class.java))
+        }
     }
 }

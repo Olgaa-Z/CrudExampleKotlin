@@ -7,13 +7,12 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.net.URLEncoder
 import javax.net.ssl.HttpsURLConnection
-import kotlin.collections.HashMap
 
 class RequestHandler {
 
     fun sendPostRequest(
-        requestURL: String,
-        postDataParams: HashMap<String, String>
+        requestURL: String ,
+        postDataParams: java.util.HashMap<String , String?>
     ): String {
         val url: URL
 
@@ -76,7 +75,7 @@ class RequestHandler {
         return sb.toString()
     }
 
-    fun sendGetRequestParam(requestURL: String, id: String): String {
+    fun sendGetRequestParam(requestURL: String , id: String?): String {
         val sb = StringBuilder()
         try {
             val url = URL(requestURL + id)
@@ -95,7 +94,7 @@ class RequestHandler {
     }
 
     @Throws(UnsupportedEncodingException::class)
-    private fun getPostDataString(params: HashMap<String, String>): String {
+    private fun getPostDataString(params: java.util.HashMap<String , String?>): String {
         val result = StringBuilder()
         var first = true
         for ((key, value) in params) {
